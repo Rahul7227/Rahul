@@ -14,7 +14,7 @@ int main()
 		else
 		printf("0");
 		if(bit%8==0)
-		printf(" ");
+		 printf(" ");
 	}
 	printf("\n%d",number);	
 }
