@@ -14,6 +14,7 @@ int main()
 	int clientSocket;
 	struct sockaddr_in serverAddr;
 	char buffer[1024];
+	int i;
 
 	//socket - create an endpoint for communication
 	clientSocket=socket(PF_INET, SOCK_STREAM, 0);
@@ -34,8 +35,19 @@ int main()
 	 printf("[+]Connected to the server\n");
 
 	// receive a message from a socket
-	recv(clientSocket,buffer,1024,0);	
+	
+	recv(clientSocket,buffer,1024,0);
+	{
 
+		for (i = 0; buffer[i]!='\0'; i++)
+	
+      		if(buffer[i] >= 'a' && buffer[i] <= 'z')
+	       	{
+        	 buffer[i] = buffer[i] - 32;
+     
+	       	}
+	
 	 printf("[+]Data received : %s\n",buffer);
+	}
 	printf("[+]closing the connection\n");
 }
