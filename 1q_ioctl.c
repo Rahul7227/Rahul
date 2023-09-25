@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 	//argv[1] has in format /dev/input/event0
 
 	fd1 = open(argv[1], O_RDONLY);
-	if (fd1 < 3) {
+	if (fd1 < 3) 
+	{
 		printf("Open Fails");
 		return -1;
 	}
